@@ -13,6 +13,10 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -27,7 +31,19 @@ const goal = 3;
         <a href="/">Home</a>
         <a href="/blog">Blog</a>
 
-		<h1>{pageTitle}</h1>
+		    <h1>{pageTitle}</h1>
+        <style define:vars={{skillColor, fontWeight, textCase}}>
+          h1 {
+            color: purple;
+            font-size: 4rem;
+          }
+          .skill {
+            color: var(--skillColor);
+            font-weight: var(--fontWeight);
+            text-transform: var(--textCase);
+          }
+        </style>
+        <hr>
         <h2>... and my new Experimental Astro site!</h2>
 
         <p>Here are a few facts about me:</p>
@@ -40,7 +56,7 @@ const goal = 3;
         </ul>
         <p>My skills are:</p>
         <ul>
-          {skills.map((skill) => <li>{skill}</li>)}
+          {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
 
         {happy && <p>I am happy to be learining Astro!</p>}
