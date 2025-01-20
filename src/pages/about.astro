@@ -1,4 +1,7 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
 import '../styles/global.css';
 
 
@@ -31,8 +34,7 @@ const textCase = "uppercase";
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-        <a href="/">Home</a>
-        <a href="/blog">Blog</a>
+        <Navigation />
 
 		    <h1>{pageTitle}</h1>
         <style define:vars={{skillColor, fontWeight, textCase}}>
@@ -67,5 +69,6 @@ const textCase = "uppercase";
         {finished && <p>I finished this tutorial!</p>}
 
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days</p>}
+        <Footer />
 	</body>
 </html>
